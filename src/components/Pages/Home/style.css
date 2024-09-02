@@ -1,0 +1,10 @@
+/* Creative Section */
+.indicator{
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+    transition: all .3s ease-in-out;
+}
+.indicatorActive{
+    background-color: black;
+}

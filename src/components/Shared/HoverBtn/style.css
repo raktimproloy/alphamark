@@ -1,0 +1,22 @@
+.startProject {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.startProjectBg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* Start with a height of 0 */
+    background: white; 
+    transition: height 0.3s ease-in-out; /* Animate height only */
+    z-index: -1;
+}
+.startProject:hover{
+    color: black !important;
+}
+.startProject:hover .startProjectBg {
+    height: 100%; /* Expand to cover the element on hover */
+}

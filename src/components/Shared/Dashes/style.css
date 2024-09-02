@@ -1,0 +1,10 @@
+.dashes_container div {
+    width: 23%;
+    background-color: black !important;
+    height: 0.5rem;
+    margin-right: .1%;
+}
+
+.dashes_container div:last-child {
+    margin-right: 0;
+}

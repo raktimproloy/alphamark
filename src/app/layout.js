@@ -1,7 +1,26 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Dashes from "@/components/Shared/Dashes"
+import Logo from "@/components/Shared/Logo"
+import Navbar from "@/components/Shared/Navbar"
+import localFont from "next/font/local"
+import ProjectBtn from "@/components/Shared/ProjectBtn"
 
 const inter = Inter({ subsets: ["latin"] });
+const NeueMontreal = localFont({
+  src: [
+    {
+      path: './../font/NeueMontreal-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './../font/NeueMontreal-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    }
+  ],
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +30,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={NeueMontreal.className}>
+        <Dashes/>
+        <Logo/>
+        <Navbar/>
+        <ProjectBtn/>
+        {children}
+      </body>
     </html>
   );
 }
