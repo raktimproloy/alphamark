@@ -1,0 +1,18 @@
+.listDot{
+    position: relative;
+    margin-left: 5%;
+    color: #FFFFFFCC;
+    margin-bottom: 3px;
+}
+
+.listDot::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    transform: translateY(-50%);
+    z-index: 3;
+}

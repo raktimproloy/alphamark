@@ -5,6 +5,10 @@ import Logo from "@/components/Shared/Logo"
 import Navbar from "@/components/Shared/Navbar"
 import localFont from "next/font/local"
 import ProjectBtn from "@/components/Shared/ProjectBtn"
+import Footer from "@/components/Shared/Footer"
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const NeueMontreal = localFont({
@@ -36,6 +40,7 @@ export default function RootLayout({ children }) {
         <Navbar/>
         <ProjectBtn/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
