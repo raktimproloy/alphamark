@@ -132,7 +132,7 @@ export default function Index() {
       </div>
 
       {/* Tab Section */}
-      <div className='border-t-2 border-black bg-[#f4f4f4]'>
+      <div className='border-t-2 border-black bg-[#f4f4f4] hidden md:block'>
       <div className='main_container py-5'>
         <div className=''>
           <div className='grid grid-cols-4 mt-5 cursor-pointer' onClick={() => setTabOneActive(!tabOneActive)}>
@@ -171,7 +171,7 @@ export default function Index() {
       </div>
       </div>
 
-      <div className='border-t-2 border-b-2 border-black bg-[#f4f4f4]'>
+      <div className='border-t-2 border-b-2 border-black bg-[#f4f4f4] hidden md:block'>
       <div className='main_container py-5'>
         <div className=''>
           <div className='grid grid-cols-4 mt-5 cursor-pointer' onClick={() => setTabTwoActive(!tabTwoActive)}>
@@ -210,13 +210,34 @@ export default function Index() {
       </div>
       </div>
 
+
+{/* Mobile Tab Section */}
+      <div className='block md:hidden py-5'>
+        <h4 className='flex text-xl'><p className='rounded-full w-5 h-5 border flex justify-center items-center border-black-600 mr-2'>1</p>Corporate Identity Desing</h4>
+        <Image src={TabImage1} alt='image' width={500} height={200} />
+        <div className=' md:w-[30rem] justify-center'>
+          <h4 className='text-xl'>Give your brand a premium personality:</h4>
+          <p className='mb-4 mt-3'>Creative Direction; Visual Communication; Logo Design; Identity Systems & Guidelines; Rebranding; Stationery & Print Design; Digital Brand Assets;</p>
+          <HoverBtn title={"Learn more about Corporate Identity"} textSize='text-2xl inline' />
+        </div>
+      </div>
+      <div className='block md:hidden pb-5'>
+        <h4 className='flex text-xl'><p className='rounded-full w-5 h-5 border flex justify-center items-center border-black-600 mr-2'>2</p>Corporate Identity Desing</h4>
+        <Image src={TabImage2} alt='image' width={500} height={200} />
+        <div className=' md:w-[30rem] justify-center'>
+          <h4 className='text-xl'>Give your brand a premium personality:</h4>
+          <p className='mb-4 mt-3'>Creative Direction; Visual Communication; Logo Design; Identity Systems & Guidelines; Rebranding; Stationery & Print Design; Digital Brand Assets;</p>
+          <HoverBtn title={"Learn more about Corporate Identity"} textSize='text-2xl inline' />
+        </div>
+      </div>
+
       <VideoSection/>
 
       {/* Slider section */}
       <div className='py-5 bg-black'>
         <div className='main_container'>
 
-        <div className='flex justify-between items-start pb-20'>
+        <div className='block md:flex justify-between items-start pb-20'>
           <h3 className='text-6xl'>Studio Insights</h3>
           <div className='flex'>
             <HoverBtn title={"Read all Insights"} textSize='inline text-2xl mr-3' />
@@ -234,6 +255,23 @@ export default function Index() {
                 speed: 500,
                 slidesToShow: 3.5,
                 swipeToSlide:true,
+                responsive: [
+                  {
+                    breakpoint: 720,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2,
+                      initialSlide: 2
+                    }
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1
+                    }
+                  }
+                ]
               }
               
           } className={"gap-3 "} >
@@ -494,7 +532,7 @@ export default function Index() {
       {/* Brand Section */}
 
       <div className='main_container py-20 bg-[#f4f4f4]'>
-      <div className='grid grid-cols-4'>
+      <div className='grid grid-cols-1 md:grid-cols-4'>
         <div className=''>
           <div className='' onMouseEnter={() => setBrandImage1(true)} onMouseLeave={() => setBrandImage1(false)}>
             <div className='flex gap-1 pt-2 pb-1'>
@@ -551,10 +589,10 @@ export default function Index() {
 
       <div className='border-t-2 border-b-2 border-black bg-[#f4f4f4]'>
       <div className='main_container py-5'>
-        <div className='grid grid-cols-4'>
+        <div className='grid grid-cols-1 md:grid-cols-4'>
           <div>
             <div>
-              <div className={`${testimonialActive1 ? "block" : "hidden"}`}>
+              <div className={`${testimonialActive1 ? " hidden md:block" : "hidden"}`}>
                 <p className='font-medium'>Services Provided</p>
                 <ul>
                   <li className='text-[#222223]'>Logo Design</li>
@@ -566,7 +604,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className='col-span-3'>
+          <div className='md:col-span-3'>
             <div className='grid grid-cols-4 mt-5 cursor-pointer' onClick={() => setTestimonialActive1(!testimonialActive1)}>
               <div className='col-span-2'>
                 <div className='flex gap-2 mb-3 '>
@@ -585,10 +623,20 @@ export default function Index() {
               <div className={`indicator ${testimonialActive1 ? "" : "indicatorActive"}`} style={{width: "7px", height: "7px"}}></div>
               </div>
             </div>
-            <div className={`grid grid-cols-4 ${testimonialActive1 ? "grid" : "hidden"}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-4 ${testimonialActive1 ? "grid" : "hidden"}`}>
               <div className='justify-center col-span-3'>
                 <p className='mb-4 mt-3 text-4xl'>“Antonio and the team have been a great help in creating our new brand identity. They have provided us guidance on every step of the way and delivered an outstanding final product.“</p>
               </div>
+            <div className={`block md:hidden`}>
+              <p className='font-medium'>Services Provided</p>
+              <ul>
+                <li className='text-[#222223]'>Logo Design</li>
+                <li className='text-[#222223]'>Corporate Identity Design</li>
+                <li className='text-[#222223]'>Branding Guidelines</li>
+                <li className='text-[#222223]'>Web Design</li>
+                <li className='text-[#222223]'>Website Development</li>
+              </ul>
+            </div>
             </div>
           </div>
         </div>
@@ -597,10 +645,10 @@ export default function Index() {
 
       <div className='border-t-2 border-b-2 border-black bg-[#f4f4f4]'>
       <div className='main_container py-5'>
-        <div className='grid grid-cols-4'>
+        <div className='grid grid-cols-1 md:grid-cols-4'>
           <div>
             <div>
-              <div className={`${testimonialActive2 ? "block" : "hidden"}`}>
+              <div className={`${testimonialActive2 ? " hidden md:block" : "hidden"}`}>
                 <p className='font-medium'>Services Provided</p>
                 <ul>
                   <li className='text-[#222223]'>Logo Design</li>
@@ -612,7 +660,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className='col-span-3'>
+          <div className='md:col-span-3'>
             <div className='grid grid-cols-4 mt-5 cursor-pointer' onClick={() => setTestimonialActive2(!testimonialActive2)}>
               <div className='col-span-2'>
                 <div className='flex gap-2 mb-3 '>
@@ -631,10 +679,20 @@ export default function Index() {
               <div className={`indicator ${testimonialActive2 ? "" : "indicatorActive"}`} style={{width: "7px", height: "7px"}}></div>
               </div>
             </div>
-            <div className={`grid grid-cols-4 ${testimonialActive2 ? "grid" : "hidden"}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-4 ${testimonialActive2 ? "grid" : "hidden"}`}>
               <div className='justify-center col-span-3'>
                 <p className='mb-4 mt-3 text-4xl'>“Antonio and the team have been a great help in creating our new brand identity. They have provided us guidance on every step of the way and delivered an outstanding final product.“</p>
               </div>
+            <div className={`block md:hidden`}>
+              <p className='font-medium'>Services Provided</p>
+              <ul>
+                <li className='text-[#222223]'>Logo Design</li>
+                <li className='text-[#222223]'>Corporate Identity Design</li>
+                <li className='text-[#222223]'>Branding Guidelines</li>
+                <li className='text-[#222223]'>Web Design</li>
+                <li className='text-[#222223]'>Website Development</li>
+              </ul>
+            </div>
             </div>
           </div>
         </div>

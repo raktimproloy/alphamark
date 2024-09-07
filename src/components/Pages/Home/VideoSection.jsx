@@ -30,7 +30,7 @@ export default function VideoSection() {
 
   return (
     <div className='main_container py-20 bg-[#f4f4f4]'>
-      <div className='grid grid-cols-4'>
+      <div className='grid grid-cols-1 md:grid-cols-4'>
         <div className='col-span-2'>
           <div className='' onMouseEnter={() => handleMouseEnter("2")} onMouseLeave={() => handleMouseLeave("2")}>
             <div className='flex gap-1 pt-2 pb-1'>

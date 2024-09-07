@@ -49,3 +49,10 @@ h1, h2, h3, h4, h5, h6,  span, label, a{
 .slick-arrow {
   display: none !important;
 }
+
+.alph_logo-left{
+  fill: #191919
+}
+.alph_logo-right{
+  fill: #191919
+}
