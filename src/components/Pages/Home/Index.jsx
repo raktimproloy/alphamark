@@ -38,7 +38,7 @@ export default function Index() {
   // Tab Section
 
   const [tabOneActive, setTabOneActive] = useState(true)
-  const [tabTwoActive, setTabTwoActive] = useState(true)
+  const [tabTwoActive, setTabTwoActive] = useState(false)
 
 
   // Shared Function
@@ -60,7 +60,7 @@ export default function Index() {
   const [brandImage2, setBrandImage2] = useState(false)
 
   // Testimonial Section
-  const [testimonialActive1, setTestimonialActive1] = useState(false)
+  const [testimonialActive1, setTestimonialActive1] = useState(true)
   const [testimonialActive2, setTestimonialActive2] = useState(false)
 
   return (
